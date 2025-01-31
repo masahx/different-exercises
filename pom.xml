@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>rs.pupin.masha</groupId>
+  <artifactId>different-exercises</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Different Java Exercises</name>
+
+  
+   <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<!--        <maven.compiler.source>1.15</maven.compiler.source>
+    	<maven.compiler.target>1.15</maven.compiler.target> -->
+        <junit.jupiter.version>5.8.2</junit.jupiter.version>
+        <junit.platform.version>1.8.2</junit.platform.version>
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+    	<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+  </properties>
+  <dependencies>
+  <!--  možda samo api zavisnost mada ovako kako je radi, a morala sam i za parametre -->
+ <!-- 	 <dependency>
+	   	 <groupId>org.junit.jupiter</groupId>
+	     <artifactId>junit-jupiter-engine</artifactId>
+	     <version>${junit.jupiter.version}</version>
+	     <scope>test</scope>
+     </dependency> -->
+  <!-- može i bez ove zavisnosti ispod???? -->   
+  <!--   <dependency>
+	     <groupId>org.junit.platform</groupId>
+	     <artifactId>junit-platform-runner</artifactId>
+	     <version>${junit.platform.version}</version>
+	     <scope>test</scope>
+     </dependency>          
+     <dependency>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter-params</artifactId>
+		<version>${junit.jupiter.version}</version>
+		<scope>test</scope>
+	</dependency> -->
+	<dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.11.1</version>
+            <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+  	 <plugins> <!-- bez maven-surefire-plugin ne može, bez maven-compiler-plugin možda i može?  -->
+	 	 <plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-compiler-plugin</artifactId>
+		    <version>3.13.0</version>
+		    <configuration>
+		        <release>17</release>
+		    </configuration>
+		</plugin> 
+	<!--	<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-war-plugin</artifactId>
+		        <version>3.2.3</version>
+		        <configuration>
+		          <archive>		          	          	
+		            <manifest>
+		              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+		            </manifest>
+		          </archive>
+		        </configuration>
+	    </plugin>
+		<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.4.14.v20181114</version>
+				<configuration>
+					<httpConnector> -->
+			        	<!--host>localhost</host-->
+			<!--        	<port>8180</port>
+			        </httpConnector>
+					
+				</configuration>
+		</plugin> -->
+		<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M7</version> 
+		</plugin>
+		<plugin>
+		    <groupId>org.jacoco</groupId>
+		    <artifactId>jacoco-maven-plugin</artifactId>
+		    <version>0.8.10</version>
+		    <executions>
+        		<execution>
+           		 <id>prepare-agent</id>
+            	 <goals>
+                	<goal>prepare-agent</goal>
+            	 </goals>
+        		</execution>
+        		<execution>
+            		<id>report</id>
+            		<phase>package</phase> <!-- baeldung -->
+            		<goals>
+                		<goal>report</goal>
+           		    </goals>
+        		</execution>
+    		</executions>
+        </plugin>  
+	</plugins>
+  </build>
+
+</project>
