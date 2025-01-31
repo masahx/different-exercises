@@ -10,8 +10,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 <!--        <maven.compiler.source>1.15</maven.compiler.source>
     	<maven.compiler.target>1.15</maven.compiler.target> -->
-        <junit.jupiter.version>5.8.2</junit.jupiter.version>
-        <junit.platform.version>1.8.2</junit.platform.version>
+        
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
     	<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
   </properties>
