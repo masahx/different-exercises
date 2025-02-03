@@ -61,12 +61,19 @@ class TeplixTest {
 										   new Integer[][] { { 2, 3, 0, 5, 6},
 											    	 		 { 3, 2, 3, -1, 4},
 											    	 		 { 3, 3, 2, 3, 0} },
+										   
 										   new Integer[][] { { 2, 3},
 												    		 { 3, 2},
 												    	 	 { 3, 3},
-												    	 	 { 4, -1}    }
-										
-										  );
+												    	 	 { 4, -1}    },
+										   
+										   new Integer[][] { {-2, -5, -5},										 
+															 {-3, 2, 2}, 
+															 {2, 1, 1},
+															 {-5, -3, null}
+											 	 	  }
+												    	 	 
+											);
 			
 	
 	Integer [][] matrix;
@@ -122,7 +129,7 @@ class TeplixTest {
 	}
 	
 	@ParameterizedTest
-	@ValueSource(ints = {8, 10})
+	@ValueSource(ints = {8, 10, 13, 14})
 	void nullPointerExceptTest(int i)  {
 		
 		matrix = testMaxes.get(i);

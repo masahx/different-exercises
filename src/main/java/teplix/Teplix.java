@@ -1,5 +1,7 @@
 package teplix;
 
+import java.util.Arrays;
+
 public class Teplix {
 	
 	static final String ERR_DIM = "both dimensions should be at least 2!";
@@ -30,7 +32,8 @@ public class Teplix {
 	- ovako je kod KDPValidatorPotpisivanje, a u fizz-buzz mislim da ovde vuče iz JUnita 4 i možda zato 
 	ne vidi testove
 */	
-	private boolean checkUpperDiag(Integer[][] matrix) {
+	
+	/*private boolean checkUpperDiag(Integer[][] matrix) {
 		
 		int elem;
 		
@@ -53,7 +56,7 @@ public class Teplix {
 		
 		return true;
 		
-	}
+	}*/
 	
 	boolean check(Integer [][] matrix) {
 	
@@ -65,15 +68,17 @@ public class Teplix {
 			
 		}		
 		
-		if (matrix[0][y-1] == null || matrix[x-1][0] == null) {
-			
+//		if (matrix[0][y-1] == null || matrix[x-1][0] == null) {
+		
+		if (Arrays.stream(matrix).flatMap(Arrays::stream).anyMatch(x -> x == null)) {
+		
 			throw new NullPointerException();
 			
 		}	
 		
 		Matrix mm = new Matrix();
 		
-		return checkUpperDiag(matrix) && checkUpperDiag(mm.transpose(matrix));
+		return mm.checkUpperTpl(matrix) && mm.checkUpperTpl(mm.transpose(matrix));
 	}
 
 }
