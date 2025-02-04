@@ -32,32 +32,7 @@ public class Teplix {
 	- ovako je kod KDPValidatorPotpisivanje, a u fizz-buzz mislim da ovde vuče iz JUnita 4 i možda zato 
 	ne vidi testove
 */	
-	
-	/*private boolean checkUpperDiag(Integer[][] matrix) {
 		
-		int elem;
-		
-		getDimensions(matrix);
-		
-		for (int i = 0; i < (y-1); i++) {
-			
-			elem = matrix[0][i]; 
-			for (int j = i + 1; j < y && j < (x + i); j++ ) {
-		
-				if (matrix[j - i][j] != elem) {
-										
-					return false;
-					
-				}
-				
-			}
-					
-		}	
-		
-		return true;
-		
-	}*/
-	
 	boolean check(Integer [][] matrix) {
 	
 		getDimensions(matrix);
@@ -66,9 +41,7 @@ public class Teplix {
 			
 			throw new IllegalArgumentException(ERR_DIM);
 			
-		}		
-		
-//		if (matrix[0][y-1] == null || matrix[x-1][0] == null) {
+		}	
 		
 		if (Arrays.stream(matrix).flatMap(Arrays::stream).anyMatch(x -> x == null)) {
 		
@@ -76,9 +49,9 @@ public class Teplix {
 			
 		}	
 		
-		Matrix mm = new Matrix();
+		MatrixOperator mo = new MatrixOperator();
 		
-		return mm.checkUpperTpl(matrix) && mm.checkUpperTpl(mm.transpose(matrix));
+		return mo.checkUpperTpl(matrix) && mo.checkUpperTpl(mo.transpose(matrix));
 	}
 
 }

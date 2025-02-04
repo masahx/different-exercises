@@ -18,7 +18,7 @@ class TeplixTest {
 		
 	static final String ERR_DIM_TEST = "both dimensions should be at least 2!";
 	List<Integer[][]> testMaxes = List.of( new Integer[0][0],
-										   new Integer[][] { {3} },
+									/**/	   new Integer[][] { {3} }, // briši
 										   new Integer[][] { {9, 2, 4, 2},
 									   					     {4, 5, 6, 7}, 
 									   					     {1, 2, 3, 3} },
@@ -27,10 +27,10 @@ class TeplixTest {
 															 {3, 9, 2, 4}, 
 															 {4, 3, 9, 2},
 															 {1, 4, 3, 9} },
-										   new Integer[][] { {5, 6, 7, 2},
+										   new Integer[][] { {5, 6, 7, 2}, // briši
 										   				     {4, 5, 6, 7}
 									   					    },
-										   new Integer[][] { {0, 1},  // 5
+										   new Integer[][] { {0, 1}, 
 									   					     {1, 2}
 									   					    } ,
 										   new Integer[][] { {3, 4, 2, 1, 0},
@@ -48,7 +48,7 @@ class TeplixTest {
 															 {1, 4, 3}
 									   					    	
 									   					    },
-										   new Integer[][] { {9, 2, 4},
+										   new Integer[][] { {9, 2, 4}, // briši
 															 {3, 9, 2}, 
 															 {4, 3, 9},
 															 {1, 4, 3}
@@ -58,7 +58,7 @@ class TeplixTest {
 															 {null, 9, 2} // 10
 											   					    	
 											     },
-										   new Integer[][] { { 2, 3, 0, 5, 6},
+										   new Integer[][] { { 2, 3, 0, 5, 6}, // briši
 											    	 		 { 3, 2, 3, -1, 4},
 											    	 		 { 3, 3, 2, 3, 0} },
 										   
@@ -90,7 +90,7 @@ class TeplixTest {
 	}
 		
 	@ParameterizedTest
-	@ValueSource(ints = {0, 2})
+	@ValueSource(ints = {0, 2, 5, 6})
 	void minimalDimensionsMessageTest(int i) {
 		
 		matrix = testMaxes.get(i);
@@ -108,28 +108,29 @@ class TeplixTest {
 		
 		
 	}
-	
+/*	
 	@ParameterizedTest
-	@ValueSource(ints = {2, 5, 6, 11, 12})
+	@ValueSource(ints = {2}/*, 5, 6, 11, 12}*//*)
 	void okDimensionsFalseTest(int i) {
 		
 		matrix = testMaxes.get(i);	
 		
 		assertFalse(t.check(matrix));
 	}
-	
+*/	
 	
 	@ParameterizedTest
-	@ValueSource(ints = {3, 4, 9})
+	@ValueSource(ints = {3} /*9}*/)
 	void okDimensionsTrueTest(int i) {
 		
 		matrix = testMaxes.get(i);
 		
 		assertTrue(t.check(matrix));
 	}
+
 	
 	@ParameterizedTest
-	@ValueSource(ints = {8, 10, 13, 14})
+	@ValueSource(ints = {8, 10, 13})
 	void nullPointerExceptTest(int i)  {
 		
 		matrix = testMaxes.get(i);

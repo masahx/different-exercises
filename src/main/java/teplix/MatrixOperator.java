@@ -1,6 +1,6 @@
 package teplix;
 
-public class Matrix {
+public class MatrixOperator {
 	
 	Integer[][] transpose(Integer[][] inMatrix) {
 		

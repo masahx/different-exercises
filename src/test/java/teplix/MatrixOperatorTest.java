@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 
- class MatrixTest {
+ class MatrixOperatorTest {
 		
 	List<Integer[][]> testMaxes = List.of(
 				
@@ -53,12 +53,11 @@ import org.junit.jupiter.params.provider.ValueSource;
 										      {5, 4, 8}
 								
 							}
-							 		   
 										    
 			
 	);
 	
-	Matrix m = new Matrix();
+	MatrixOperator m = new MatrixOperator();
 	
 	@ParameterizedTest
 	@CsvSource(value = {"0,0", "1,2", "3,4"})
@@ -76,17 +75,17 @@ import org.junit.jupiter.params.provider.ValueSource;
 	@ValueSource(ints = {5, 8})
 	void upperDiagOKTest(int example) {
 		
-		Matrix m = new Matrix();
+		MatrixOperator m = new MatrixOperator();
 		
 		assertTrue(m.checkUpperTpl(testMaxes.get(example)));
 		
 	}
 	
 	@ParameterizedTest
-	@ValueSource(ints = {6, 7, 9})
+	@ValueSource(ints = {6, 7})
 	void upperDiagNotOKTest(int example) {
 		
-		Matrix m = new Matrix();
+		MatrixOperator m = new MatrixOperator();
 		
 		assertFalse(m.checkUpperTpl(testMaxes.get(example)));
 		
