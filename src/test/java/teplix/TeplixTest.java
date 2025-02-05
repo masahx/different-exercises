@@ -18,7 +18,7 @@ class TeplixTest {
 		
 	static final String ERR_DIM_TEST = "both dimensions should be at least 2!";
 	List<Integer[][]> testMaxes = List.of( new Integer[0][0],
-									/**/	   new Integer[][] { {3} }, // briši
+			
 										   new Integer[][] { {9, 2, 4, 2},
 									   					     {4, 5, 6, 7}, 
 									   					     {1, 2, 3, 3} },
@@ -27,6 +27,7 @@ class TeplixTest {
 															 {3, 9, 2, 4}, 
 															 {4, 3, 9, 2},
 															 {1, 4, 3, 9} },
+										   
 										   new Integer[][] { {5, 6, 7, 2}, // briši
 										   				     {4, 5, 6, 7}
 									   					    },
@@ -47,25 +48,12 @@ class TeplixTest {
 															 {4, 3, 9},
 															 {1, 4, 3}
 									   					    	
-									   					    },
-										   new Integer[][] { {9, 2, 4}, // briši
-															 {3, 9, 2}, 
-															 {4, 3, 9},
-															 {1, 4, 3}
-										   					    	
-										   					    },
+									   					    },										   					    	
+										   					   
 										   new Integer[][] { {9, 2, 1},
-															 {null, 9, 2} // 10
+															 {null, 9, 2} 
 											   					    	
 											     },
-										   new Integer[][] { { 2, 3, 0, 5, 6}, // briši
-											    	 		 { 3, 2, 3, -1, 4},
-											    	 		 { 3, 3, 2, 3, 0} },
-										   
-										   new Integer[][] { { 2, 3},
-												    		 { 3, 2},
-												    	 	 { 3, 3},
-												    	 	 { 4, -1}    },
 										   
 										   new Integer[][] { {-2, -5, -5},										 
 															 {-3, 2, 2}, 
@@ -73,14 +61,13 @@ class TeplixTest {
 															 {-5, -3, null}
 											 	 	  }
 												    	 	 
-											);
-			
+											);			
 	
 	Integer [][] matrix;
 	Teplix t = new Teplix();
 	
 	@ParameterizedTest
-	@ValueSource(ints = {0, 7})
+	@ValueSource(ints = {0, 6})
 	void minimalDimensionsTest(int i)  {
 		
 		matrix = testMaxes.get(i);
@@ -90,7 +77,7 @@ class TeplixTest {
 	}
 		
 	@ParameterizedTest
-	@ValueSource(ints = {0, 2, 5, 6})
+	@ValueSource(ints = {0, 1, 4, 5})
 	void minimalDimensionsMessageTest(int i) {
 		
 		matrix = testMaxes.get(i);
@@ -108,29 +95,19 @@ class TeplixTest {
 		
 		
 	}
-/*	
-	@ParameterizedTest
-	@ValueSource(ints = {2}/*, 5, 6, 11, 12}*//*)
-	void okDimensionsFalseTest(int i) {
-		
-		matrix = testMaxes.get(i);	
-		
-		assertFalse(t.check(matrix));
-	}
-*/	
+
 	
-	@ParameterizedTest
-	@ValueSource(ints = {3} /*9}*/)
-	void okDimensionsTrueTest(int i) {
+	@Test
+	void okDimensionsTrueTest() {
 		
-		matrix = testMaxes.get(i);
+		matrix = testMaxes.get(2);
 		
 		assertTrue(t.check(matrix));
 	}
 
 	
 	@ParameterizedTest
-	@ValueSource(ints = {8, 10, 13})
+	@ValueSource(ints = {7, 8, 9})
 	void nullPointerExceptTest(int i)  {
 		
 		matrix = testMaxes.get(i);
