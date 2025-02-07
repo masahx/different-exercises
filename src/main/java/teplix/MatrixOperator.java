@@ -1,9 +1,15 @@
 package teplix;
 
+import java.util.Arrays;
+
 public class MatrixOperator {
 	
+	static final String ERR_DIM_TEST = "both dimensions should be at least 2!";
+	 
+	Integer[][] matrix;
+	
 	Integer[][] transpose(Integer[][] inMatrix) {
-		
+				
 		int outN = inMatrix.length;
 		int outM = inMatrix[0].length;
 		
@@ -23,8 +29,34 @@ public class MatrixOperator {
 		
 	}
 	
-	// hoću da prebacim ovo iz teplixa ovde? kao i računanje dimenzija
+	
+	private void dimensionCheck() {
+		
+		if (matrix.length < 2 || matrix[0].length < 2) {
+			
+			throw new IllegalArgumentException(ERR_DIM_TEST);
+			
+		}
+		
+	}
+	
+	private void nullCheck() {
+		
+		if (Arrays.stream(matrix).flatMap(Arrays::stream).anyMatch(e -> e == null)) {
+			
+			throw new NullPointerException();
+			
+		}	
+		
+	}
+	
 	boolean checkUpperTpl(Integer[][] matrix) {
+		
+		this.matrix = matrix;
+		
+		dimensionCheck();
+		
+		nullCheck();			
 		
 		int elem;
 		int limit;
