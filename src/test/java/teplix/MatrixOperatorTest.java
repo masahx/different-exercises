@@ -109,7 +109,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 	}
 	
 	@ParameterizedTest
-	@ValueSource(ints = {9, 6, 7})
+	@ValueSource(ints = {6, 7, 9})
 	void minimalDimensionsMessageTest(int i) {
 		
 		
