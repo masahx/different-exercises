@@ -56,8 +56,7 @@ public class Kombinator {
 				}
 				
 			}
-			
-			System.out.println(code + " x " + Arrays.toString(res));
+						
 			return res;
 			
 		} else if (code <= 9) {
