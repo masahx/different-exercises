@@ -56,26 +56,26 @@ public class Node {
 	int getMinSum() {
 		
 //		return value + Math.min(childValue.apply(left), childValue.apply(right));
-		int child;		
+		
 		
 	//	Optional.ofNullable(left)
 		
-		int sumL = 0;
-		int sumR = 0;
+		int sum = value;
 		
-		if (left != null) {
+		if (left != null && right != null) {
 			
-			sumL = left.getValue();
+			sum += Math.min(left.getMinSum(), right.getMinSum());
 			
-		} 
-		
-		if (right != null) {
+		} else if (left != null) {
 			
-			sumR = right.getValue();
+			sum += left.getMinSum();
 			
+		} else if (right != null) {
+			
+			sum += right.getMinSum();
 		}
 		
-		
+		return sum;
 		
 		
 /*		
