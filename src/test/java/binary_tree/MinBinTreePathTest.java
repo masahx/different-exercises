@@ -10,7 +10,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-public class MinBinTreePathTest {
+class MinBinTreePathTest {
 	
 	/*
 	 * Daily Coding Problem: Problem #1601 [Easy]
@@ -91,8 +91,6 @@ public class MinBinTreePathTest {
 			
 		);
 	
-	}
-	
-	
+	}	
  
 }
