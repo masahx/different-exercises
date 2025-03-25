@@ -5,10 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 
 import java.util.stream.Stream;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+
+
 
 public class StringModifierTest {
 	/*
@@ -68,21 +69,6 @@ For example, suppose we are given the string daily and k = 1. The best we can cr
 			Arguments.of("title", 2, "etitl"),
 			Arguments.of("temperature", 3, "aturetemper")
 			,Arguments.of("xiyazm", 3, "azmxiy")
-		/*	,Arguments.of("", 0, "")
-			,Arguments.of("a", 0, "a")  
-			,Arguments.of("j", 1, "j") 
-			,Arguments.of("rear", 0, "rear") 
-			,Arguments.of("klba", 1, "aklb")
-			,Arguments.of("eoxyky", 6, "eoxyky") 
-			,Arguments.of("abcdef", 5, "abcdef")  
-			,Arguments.of("bcdefg", 3, "bcdefg") 
-			,Arguments.of("kok", 0, "kok") 
-			,Arguments.of("aiuhihj", 1, "aiuhihj") 
-			,Arguments.of("xyzfm", 2, "fmxyz") 
-			,Arguments.of("sodaosj", 7, "sodaosj") 
-			,Arguments.of("sakoi", 3, "akois")
-			,Arguments.of("bcdefgaia", 3, "aiabcdefg") 
-			,Arguments.of("a c", 1, " ca")  */
 			
 			// moglo bi dalje, pokrivene ne sve kombinacije, najmanji je u 1. onim koje se dohvate i 2. koje se ne dohvate
 			
@@ -97,16 +83,6 @@ For example, suppose we are given the string daily and k = 1. The best we can cr
 				
 				Arguments.of("joke", 10),
 				Arguments.of("blind", 8)
-		/*		,Arguments.of("", 1),  
-				Arguments.of("", 2), 
-				Arguments.of("", 3), 
-				Arguments.of("s", 4), 
-				Arguments.of("s", 5), 
-				Arguments.of("ds", 4), 
-				Arguments.of("de", 5), 
-				Arguments.of("der", 6), 
-				Arguments.of("der", 5) */
-				
 				
 		);
 		
