@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 
 
-public class StringModifierTest {
+class StringModifierTest {
 	/*
 	 * Daily Coding Problem #1611
 

@@ -12,7 +12,7 @@ public class StringModifier {
 			
 		}
 		
-		String mixed = original; // )).append(original.substring(0, 2));
+		String mixed = original; 
 		String minMixed = original;
 		
 		do {
